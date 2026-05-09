@@ -1,0 +1,23 @@
+{
+    "name": "hkrafted-leadradar",
+    "private": true,
+    "version": "0.1.0",
+    "description": "Internal freelance lead tracking dashboard for Hkrafted.",
+    "scripts": {
+      "dev:web": "pnpm --filter web dev",
+      "build:web": "pnpm --filter web build",
+      "preview:web": "pnpm --filter web preview",
+      "dev:worker": "pnpm --filter worker dev",
+      "track": "pnpm --filter worker track"
+    },
+    "keywords": [
+      "freelance",
+      "lead-tracker",
+      "dashboard",
+      "supabase",
+      "react",
+      "nodejs"
+    ],
+    "author": "Hkrafted Team",
+    "license": "UNLICENSED"
+  }
