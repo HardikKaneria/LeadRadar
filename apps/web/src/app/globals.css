@@ -1,0 +1,180 @@
+@import 'tailwindcss';
+
+/* Radar OIP — design tokens mirrored from src/theme/tokens.ts.
+   Use AntD components + theme tokens first; these CSS vars cover the few raw-CSS spots
+   (layout backgrounds, gradients, scrollbars) and keep legacy aliases working mid-migration. */
+:root {
+  /* Font families (loaded via Google Fonts <link> in index.html). */
+  --font-sans: 'Inter';
+  --font-display: 'Space Grotesk';
+  --font-mono: 'JetBrains Mono';
+  --brand: #024629;
+  --brand-hover: #002213;
+  --brand-soft: rgba(61, 220, 151, 0.12);
+  --brand-border: rgba(61, 220, 151, 0.28);
+  --accent-cyan: #38bdf8;
+  --warning: #eab308;
+  --danger: #ef4444;
+
+  --bg-base: #0b0f0d;
+  --bg-layout: #111715;
+  --bg-container: #151c19;
+  --bg-elevated: #1b2420;
+  --bg-spotlight: #223029;
+  --bg-field: #111715;
+
+  --border: #26332d;
+  --border-subtle: #1d2823;
+  --border-strong: #33443b;
+
+  --text: #f4f7f5;
+  --text-secondary: #c9d3ce;
+  --text-tertiary: #7e8b85;
+
+  /* Legacy aliases (pre-AntD pages) → mapped onto the new scale so nothing looks off. */
+  --background: var(--bg-base);
+  --surface: var(--bg-container);
+  --muted: var(--text-secondary);
+  --accent: var(--brand);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.ant-typography,
+.ant-btn,
+.ant-input,
+.ant-select,
+.ant-card,
+.ant-tag,
+.ant-table,
+.ant-breadcrumb,
+.ant-menu {
+  letter-spacing: 0;
+}
+
+a {
+  color: var(--brand);
+}
+
+/* Headings + the AntD Typography titles wear the display face for brand character. */
+h1,
+h2,
+h3,
+h4,
+h5,
+.font-display,
+.ant-typography h1,
+.ant-typography h2,
+.ant-typography h3,
+.ant-typography h4,
+.ant-typography h5,
+h1.ant-typography,
+h2.ant-typography,
+h3.ant-typography,
+h4.ant-typography,
+h5.ant-typography {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  letter-spacing: -0.01em;
+}
+
+code,
+pre,
+kbd,
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Subtle ambient radar glow behind the app canvas. */
+.radar-canvas {
+  background:
+    radial-gradient(980px 520px at 14% -10%, rgba(61, 220, 151, 0.12), transparent 58%),
+    radial-gradient(860px 420px at 100% 0%, rgba(56, 189, 248, 0.05), transparent 50%),
+    var(--bg-base);
+}
+
+.surface-border {
+  border: 1px solid var(--border);
+  background: var(--bg-container);
+}
+
+.surface-border-subtle {
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-container);
+}
+
+.eyebrow {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding-inline: 0.375rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1;
+}
+
+/* Inbox 3-pane → stack on narrower viewports. !important beats the inline grid template. */
+@media (max-width: 1280px) {
+  .inbox-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) !important;
+  }
+  .inbox-grid > :nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .inbox-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+::selection {
+  background: rgba(61, 220, 151, 0.24);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #32413a transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #32413a;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f5047;
+}

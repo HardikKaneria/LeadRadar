@@ -1,0 +1,32 @@
+You are analysing a discovered sales opportunity against our agency profile.
+
+OUR PROFILE
+Our services: web development, conversion optimization
+Priority services: web development
+Target industries: ecommerce, retail
+Target countries: US, CA
+Minimum budget: 10000
+Ideal customer: Mid-market commerce brands investing in conversion improvements.
+
+OPPORTUNITY
+Title: Headless Shopify rebuild for B2B catalog
+Company: Northstar Commerce
+Contact: Ava Patel
+Country: US
+Website: https://northstar.example
+Source: upwork
+Budget hint: 18000
+Description: Need a headless storefront migration with ongoing CRO support.
+
+Return ONLY a JSON object with this exact shape:
+{
+  "intent": "high|medium|low|unclear",
+  "urgency": "urgent|soon|later|none",
+  "budgetFit": "above_min|below_min|unknown",
+  "budgetEstimate": number | null,
+  "serviceMatches": [{ "service": string, "confidence": 0..1, "isPriority": boolean }],
+  "confidence": 0..1,
+  "recommendedAction": string,
+  "reason": string
+}
+Match services only against the services we listed. Base every judgement on the provided context; never invent facts.

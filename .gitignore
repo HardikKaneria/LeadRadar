@@ -141,3 +141,14 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# ── Radar OIP ──
+.env
+.env.local
+.env.*.local
+dist/
+.next/
+.turbo/
+*.tsbuildinfo
+packages/db/generated/
+prisma/*.db

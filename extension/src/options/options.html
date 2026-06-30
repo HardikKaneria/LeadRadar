@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radar OIP Extension Options</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <div class="eyebrow">Radar OIP</div>
+      <h1>Extension options</h1>
+      <p class="muted">Store the API base URL and scoped capture token used by the browser extension.</p>
+
+      <label class="field">
+        <span>API base URL</span>
+        <input id="api-base-url" type="url" placeholder="http://localhost:4000" />
+      </label>
+
+      <label class="field">
+        <span>Capture token</span>
+        <textarea id="capture-token" rows="4" placeholder="radar_ext_..."></textarea>
+      </label>
+
+      <button id="save-config" class="primary">Save settings</button>
+      <div id="status" class="status"></div>
+    </main>
+
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>

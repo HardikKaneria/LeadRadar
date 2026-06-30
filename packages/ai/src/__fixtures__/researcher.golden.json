@@ -1,0 +1,18 @@
+{
+  "input": {
+    "name": "Northwind Labs",
+    "domain": "northwind.io",
+    "website": "https://northwind.io",
+    "industry": "B2B SaaS",
+    "country": "United States",
+    "knownTechStack": ["React", "Postgres"],
+    "context": "Opportunity: replatform their analytics dashboard"
+  },
+  "response": {
+    "summary": "Northwind Labs is a B2B SaaS company building analytics tooling. They appear to run a modern React + Postgres stack and are investing in their dashboard experience.",
+    "industry": "B2B SaaS",
+    "techStack": ["React", "Postgres", "TypeScript"],
+    "problems": ["Aging analytics dashboard", "Scaling query performance"],
+    "suggestedServices": ["Frontend replatforming", "Data engineering"]
+  }
+}

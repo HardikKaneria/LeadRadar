@@ -1,19 +1,21 @@
-import { resolve } from 'node:path'
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { fileURLToPath, URL } from 'node:url';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-  css: {
-    // Keep PostCSS local to this app so Vite doesn't walk into sibling-project
-    // configs that still reference the deprecated Tailwind v3 plugin shape.
-    postcss: {},
-  },
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      '@leadradar/shared': resolve(__dirname, '../../packages/shared/src/index.ts'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      // Consume the contracts package from TS source (like Next's transpilePackages). The built
+      // dist is CommonJS, and Rollup can't trace named value re-exports through `export *` from CJS.
+      '@radar/contracts': fileURLToPath(
+        new URL('../../packages/contracts/src/index.ts', import.meta.url),
+      ),
     },
   },
-  plugins: [react(), tailwindcss()],
-})
+  server: {
+    port: 3000,
+  },
+});

@@ -1,0 +1,48 @@
+{
+  "discovery": {
+    "title": "Headless Shopify rebuild for B2B catalog",
+    "description": "Need a headless storefront migration with ongoing CRO support.",
+    "companyName": "Northstar Commerce",
+    "contactName": "Ava Patel",
+    "country": "US",
+    "website": "https://northstar.example",
+    "source": "upwork",
+    "budgetHint": 18000
+  },
+  "analysis": {
+    "score": 89,
+    "intent": "high",
+    "urgency": "soon",
+    "serviceMatches": [
+      {
+        "service": "web development",
+        "confidence": 0.92,
+        "isPriority": true
+      }
+    ],
+    "budgetEstimate": 18000,
+    "confidence": 0.88,
+    "recommendedAction": "Send a tailored teardown and book a discovery call this week",
+    "reason": "Strong web rebuild fit, clear budget alignment, and near-term urgency",
+    "isBadLead": false
+  },
+  "pipeline": {
+    "discoveryStatus": "analyzed",
+    "hasOpenTask": false,
+    "stageLabel": "Discovery Inbox"
+  },
+  "response": {
+    "recommendedAction": "Email a concise teardown with two relevant ecommerce examples and ask for a 30-minute discovery call",
+    "reason": "A thoughtful first-touch email fits the async Upwork context while moving quickly to a call",
+    "plannedTask": {
+      "title": "Draft and send teardown email",
+      "type": "email",
+      "notes": "Reference the headless rebuild scope and include two ecommerce case studies."
+    }
+  },
+  "expected": {
+    "priority": "critical",
+    "priorityWeight": 100,
+    "dueAt": "2026-06-24T08:00:00.000Z"
+  }
+}

@@ -1,0 +1,37 @@
+You are planning the next best sales action for a discovered opportunity.
+
+DISCOVERY
+Title: Headless Shopify rebuild for B2B catalog
+Company: Northstar Commerce
+Contact: Ava Patel
+Country: US
+Source: upwork
+Budget hint: 18000
+Description: Need a headless storefront migration with ongoing CRO support.
+
+LATEST ANALYSIS
+Score: 89
+Intent: high
+Urgency: soon
+Confidence: 0.88
+Budget estimate: 18000
+Service matches: web development (92%, priority)
+Analyzer recommended action: Send a tailored teardown and book a discovery call this week
+Analyzer reason: Strong web rebuild fit, clear budget alignment, and near-term urgency
+
+PIPELINE
+Discovery status: analyzed
+Open task already exists: no
+Stage label: Discovery Inbox
+
+Return ONLY a JSON object with this exact shape:
+{
+  "recommendedAction": string,
+  "reason": string,
+  "plannedTask": {
+    "title": string,
+    "type": "call|email|message|meeting|proposal|custom",
+    "notes": string
+  }
+}
+Make the action concrete, short, and suitable for a human operator to execute next.

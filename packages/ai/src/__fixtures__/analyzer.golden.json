@@ -1,0 +1,46 @@
+{
+  "discovery": {
+    "title": "Headless Shopify rebuild for B2B catalog",
+    "description": "Need a headless storefront migration with ongoing CRO support.",
+    "companyName": "Northstar Commerce",
+    "contactName": "Ava Patel",
+    "country": "US",
+    "website": "https://northstar.example",
+    "source": "upwork",
+    "budgetHint": 18000
+  },
+  "profile": {
+    "services": ["web development", "conversion optimization"],
+    "priorityServices": ["web development"],
+    "targetIndustries": ["ecommerce", "retail"],
+    "targetCountries": ["US", "CA"],
+    "minBudget": 10000,
+    "idealCustomerSummary": "Mid-market commerce brands investing in conversion improvements.",
+    "badLeadRules": {
+      "logic": "any",
+      "rules": []
+    }
+  },
+  "response": {
+    "intent": "high",
+    "urgency": "soon",
+    "budgetFit": "above_min",
+    "budgetEstimate": 18000,
+    "serviceMatches": [
+      {
+        "service": "web development",
+        "confidence": 0.92,
+        "isPriority": true
+      }
+    ],
+    "confidence": 0.88,
+    "recommendedAction": "Send a tailored teardown and book a discovery call this week",
+    "reason": "Strong web rebuild fit, clear budget alignment, and near-term urgency"
+  },
+  "expected": {
+    "score": 80,
+    "countryMatch": true,
+    "budgetFit": "above_min",
+    "scoreReason": "High-intent buying signal; Service fit for web development; Priority service fit for web development"
+  }
+}

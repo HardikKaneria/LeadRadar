@@ -1,0 +1,23 @@
+You are researching a company so a sales team can decide how to approach it.
+Use only the facts provided plus widely known, stable knowledge. Do not invent specifics
+(funding numbers, headcount, named people) you cannot infer — leave fields general instead.
+
+COMPANY
+Name: Northwind Labs
+Domain: northwind.io
+Website: https://northwind.io
+Known industry: B2B SaaS
+Country: United States
+Known tech stack: React, Postgres
+Context: Opportunity: replatform their analytics dashboard
+
+Return ONLY a JSON object with this exact shape:
+{
+  "summary": string,
+  "industry": string | null,
+  "techStack": string[],
+  "problems": string[],
+  "suggestedServices": string[]
+}
+Keep the summary to 2-3 sentences. "problems" are likely pain points this company has;
+"suggestedServices" are services we could pitch to solve them. Keep each list focused (<= 6).

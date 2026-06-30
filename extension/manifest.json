@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Radar OIP Capture",
+  "description": "Human-assisted, visible-only opportunity capture for Radar OIP.",
+  "version": "0.2.0",
+  "permissions": ["activeTab", "scripting", "storage", "alarms", "tabs"],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_title": "Radar OIP Capture",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:3000/*", "https://*.radaroip.com/*"],
+      "js": ["content/auth-bridge.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_page": "options/options.html"
+}

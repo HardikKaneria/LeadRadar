@@ -1,0 +1,329 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0b0f0d;
+  color: #f4f7f5;
+  font: 13px/1.5 Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: 320px;
+}
+
+.shell {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3ddc97;
+  line-height: 1;
+}
+
+.app-name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+/* ── Connection dot ── */
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.dot--idle  { background: #2a3d33; }
+.dot--ready { background: #3ddc97; box-shadow: 0 0 8px #3ddc9780; }
+.dot--error { background: #ff6b6b; }
+
+/* ── Workspace card ── */
+.workspace-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #111915;
+  border: 1px solid #1e2d26;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.workspace-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.workspace-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #1d4a33;
+  color: #3ddc97;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.workspace-name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.conn-status {
+  font-size: 11px;
+  color: #3ddc97;
+  margin-top: 1px;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid #1e2d26;
+  border-radius: 7px;
+  color: #8aa296;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+.btn-icon:hover { border-color: #ff6b6b; color: #ff6b6b; }
+
+/* ── Last capture ── */
+.last-capture {
+  font-size: 11px;
+  color: #8aa296;
+  background: #0d1410;
+  border: 1px solid #1a2820;
+  border-radius: 8px;
+  padding: 8px 10px;
+  line-height: 1.4;
+}
+.last-capture--success { color: #3ddc97; border-color: #1d4a33; background: #0a1a12; }
+.last-capture--error   { color: #ff6b6b; border-color: #4a1d1d; background: #1a0a0a; }
+.last-capture--queued  { color: #f5a623; border-color: #4a3a1d; background: #1a150a; }
+.last-capture--idle    { color: #8aa296; }
+
+/* ── Buttons ── */
+.btn {
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn:not(:disabled):active { transform: scale(0.97); }
+
+.btn.primary {
+  background: #3ddc97;
+  color: #062114;
+  padding: 11px 16px;
+  font-size: 13px;
+}
+.btn.primary:not(:disabled):hover { background: #50e8a4; }
+
+.btn.ghost {
+  background: transparent;
+  color: #8aa296;
+  border: 1px solid #1e2d26;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+.btn.ghost:not(:disabled):hover { color: #c9d3ce; border-color: #2e4039; }
+
+.btn.small { font-size: 11px; padding: 6px 10px; }
+.btn.full { width: 100%; text-align: center; }
+
+/* ── Row helpers ── */
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* ── Queue badge ── */
+.badge {
+  background: #f5a623;
+  color: #1a1000;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Status ── */
+.status {
+  min-height: 16px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.status--success { color: #3ddc97; }
+.status--error   { color: #ff6b6b; }
+.status--info    { color: #8aa296; }
+.status--loading { color: #f5a623; }
+
+/* ── LinkedIn guide ── */
+.guide {
+  background: #0a1018;
+  border: 1px solid #1a2a3a;
+  border-radius: 10px;
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.guide-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.guide-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #c9d8e8;
+  letter-spacing: 0.01em;
+}
+
+.guide-steps {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+
+.guide-steps li {
+  counter-increment: step;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #8aa296;
+  line-height: 1.45;
+}
+
+.guide-steps li::before {
+  content: counter(step);
+  min-width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #0e2238;
+  border: 1px solid #1a3a5c;
+  color: #4a9edd;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.guide-steps li strong {
+  color: #c9d8e8;
+  font-weight: 600;
+}
+
+.guide-tip {
+  font-size: 10.5px;
+  color: #4a6358;
+  line-height: 1.45;
+  border-top: 1px solid #111d28;
+  padding-top: 8px;
+}
+
+/* ── Disconnected view ── */
+.not-connected {
+  background: #0d1410;
+  border: 1px solid #1a2820;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.not-connected-icon { font-size: 28px; }
+
+.not-connected-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.not-connected-sub {
+  font-size: 12px;
+  color: #8aa296;
+  line-height: 1.5;
+  max-width: 220px;
+}
+
+/* ── Steps ── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #8aa296;
+}
+
+.step-num {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #1a2820;
+  border: 1px solid #2a4035;
+  color: #3ddc97;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
